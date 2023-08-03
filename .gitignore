@@ -1,0 +1,7 @@
+.idea
+node_modules
+allure-results
+tests-runner/node_modules
+tests-runner/cypress/screenshots
+tests-runner/cypress/videos
+tests-runner/package-lock.json

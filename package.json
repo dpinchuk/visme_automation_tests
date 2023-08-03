@@ -1,0 +1,25 @@
+{
+  "name": "visme",
+  "version": "1.0.0",
+  "description": "Automation test for checking Visme service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dpinchuk",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/cypress": "^9.0.0",
+    "cypress": "^12.17.3",
+    "cypress-social-logins": "^1.14.1",
+    "cypress-xpath": "^2.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "./cypress/stepsDefinition"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
