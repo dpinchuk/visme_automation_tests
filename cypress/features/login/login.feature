@@ -5,6 +5,7 @@ Feature: Customer can login
     Given I visit the login page
     And I see all elements on the left side: graphics, description
     And I see all elements on the right side: logo, header, login form, links, social buttons
+    And All links are working
 
   @regression
   Scenario Outline: [#1] The customer can log in using the email and password input fields

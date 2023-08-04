@@ -57,3 +57,9 @@ And("I see all elements on the left side: graphics, description", () => {
     loginPage.assertDescriptionsIsDisplayed();
     loginPage.assertFeatureHighlightTextIsDisplayed();
 });
+Given("All links are working", () => {
+    cy.get('a').then($a => {
+        const message = $a.text();
+        expect($a, message).to.have.attr('href').not.contain('undefined');
+    })
+});
