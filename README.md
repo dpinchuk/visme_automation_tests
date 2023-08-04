@@ -1,4 +1,4 @@
-# uscweb-taf
+# visme service
 test automation framework for VISME team based on Cypress
 
 ## How to run locally:
