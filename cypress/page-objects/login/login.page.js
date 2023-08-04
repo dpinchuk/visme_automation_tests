@@ -1,6 +1,7 @@
 import "../../support/commands";
-import {LOGIN_PAGE} from "../../configs/endpoints.config";
-import {loginComponents} from "./login_components";
+import { LOGIN_PAGE } from "../../configs/endpoints.config";
+import { loginComponentsRight } from "./login_components_right";
+import { loginComponentsLeft } from "./login_components_left";
 
 
 const loginPage = {
@@ -9,35 +10,35 @@ const loginPage = {
     },
 
     assertLoginFormDisplayedOnThePage() {
-        return loginComponents.loginForm().should('be.visible');
+        return loginComponentsRight.loginForm().should('be.visible');
     },
 
     enterEmail(email) {
-        return loginComponents.emailField().type(email);
+        return loginComponentsRight.emailField().type(email);
     },
 
     enterPassword(password) {
-        return loginComponents.passwordField().type(password);
+        return loginComponentsRight.passwordField().type(password);
     },
 
     clickOnSubmitButton() {
-        return loginComponents.submitButton().click();
+        return loginComponentsRight.submitButton().click();
     },
 
     clickOnGoogleSubmitButton() {
-        return loginComponents.googleSubmitButton().click();
+        return loginComponentsRight.googleSubmitButton().click();
     },
 
     clickOnFacebookSubmitButton() {
-        return loginComponents.facebookSubmitButton().click({force: true});
+        return loginComponentsRight.facebookSubmitButton().click({force: true});
     },
 
     clickOnRegisterLink() {
-        return loginComponents.registerLink().click();
+        return loginComponentsRight.registerLink().click();
     },
 
     clickOnForgotPasswordLink() {
-        return loginComponents.forgotPasswordLink().click();
+        return loginComponentsRight.forgotPasswordLink().click();
     },
 
     modalDialogWindowActions() {
@@ -49,7 +50,7 @@ const loginPage = {
     },
 
     clickOnModalDialogCloseButton() {
-        return loginComponents.modalDialogCloseButton().click();
+        return loginComponentsRight.modalDialogCloseButton().click();
     },
 
     assertEmailRequired() {
@@ -62,7 +63,29 @@ const loginPage = {
 
     assertInvalidData() {
         cy.findByText('Invalid email/password!').should('be.visible');
-    }
+    },
+    assertLogoIsDisplayed() {
+        loginComponentsRight.logo().should('be.visible');
+        loginComponentsRight.header().should('be.visible');
+        loginComponentsRight.welcomeText().should('be.visible');
+        loginComponentsRight.loginForm().should('be.visible');
+        loginComponentsRight.emailField().should('be.visible');
+        loginComponentsRight.emailField().should('be.visible');
+        loginComponentsRight.passwordField().should('be.visible');
+        loginComponentsRight.googleSubmitButton().should('be.visible');
+        loginComponentsRight.facebookSubmitButton().should('be.visible');
+        loginComponentsRight.registerLink().should('be.visible');
+        loginComponentsRight.forgotPasswordLink().should('be.visible');
+    },
+    assertGraphicsIsDisplayed() {
+        loginComponentsLeft.graphics().should('be.visible');
+    },
+    assertDescriptionsIsDisplayed() {
+        loginComponentsLeft.description().should('be.visible');
+    },
+    assertFeatureHighlightTextIsDisplayed() {
+        cy.findByText('Feature Highlight').should('be.visible');
+    },
 };
 
 export {

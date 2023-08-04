@@ -49,3 +49,11 @@ Then("I am getting a message that the data entered is incorrect", () => {
 And("I need to wait during {int} ms", (ms) => {
     cy.wait(ms);
 });
+And("I see all elements on the right side: logo, header, login form, links, social buttons", () => {
+    loginPage.assertLogoIsDisplayed();
+});
+And("I see all elements on the left side: graphics, description", () => {
+    loginPage.assertGraphicsIsDisplayed();
+    loginPage.assertDescriptionsIsDisplayed();
+    loginPage.assertFeatureHighlightTextIsDisplayed();
+});
