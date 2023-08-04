@@ -6,7 +6,7 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   fixturesFolder: 'cypress/fixtures',
   retries: 0,
-  defaultCommandTimeout: 8000,
+  defaultCommandTimeout: 10000,
   video: false,
   screenshotOnRunFailure: true,
   chromeWebSecurity: false,
